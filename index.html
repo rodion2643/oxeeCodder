@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="ocean">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oxe000 — веб-разработка</title>
+  <meta name="description" content="Разработка сайтов, правки, доработки — любые задачи по вебу.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="grid-canvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="header">
+    <a href="#" class="logo" data-magnetic>
+      <span class="logo-bracket">&lt;</span>oxe<span class="logo-accent">000</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <nav class="nav">
+      <a href="#about" data-magnetic>Обо мне</a>
+      <a href="#work" data-magnetic>Работы</a>
+      <a href="#services" data-magnetic>Услуги</a>
+      <a href="#pricing" data-magnetic>Цены</a>
+      <a href="#contact" data-magnetic>Контакт</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Сменить тему" data-magnetic>
+      <span class="theme-icon theme-icon--ocean">◐</span>
+      <span class="theme-icon theme-icon--void">◑</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-badge" data-reveal>
+        <span class="pulse-dot"></span>
+        открыт для проектов
+      </div>
+      <h1 class="hero-title" data-reveal>
+        <span class="glitch" data-text="Делаю сайты">Делаю сайты</span>
+        <span class="hero-subline">которые <em>работают</em> и <em>цепляют</em></span>
+      </h1>
+      <p class="hero-desc" data-reveal>
+        Любое программирование сайтов — от нуля до правок. Вёрстка, логика, формы, адаптив, деплой. Беру задачу и довожу до результата.
+      </p>
+      <div class="hero-terminal" data-reveal>
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+          <code>oxe000@dev ~</code>
+        </div>
+        <pre class="terminal-body"><span id="typewriter"></span><span class="caret">|</span></pre>
+      </div>
+      <div class="hero-actions" data-reveal>
+        <a href="https://t.me/oxe000" class="btn btn-primary" target="_blank" rel="noopener" data-magnetic>
+          Написать в Telegram
+        </a>
+        <button class="btn btn-ghost" id="hero-request" data-magnetic>Оставить заявку</button>
+      </div>
+      <div class="hero-stats" data-reveal>
+        <div class="stat">
+          <span class="stat-num" data-count="50">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">проектов</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="24">0</span><span class="stat-unit">/7</span>
+          <span class="stat-label">на связи</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="100">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">в деле</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">01</span>
+        <h2>Кто я</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card about-card--main" data-reveal data-tilt>
+          <h3>oxe000</h3>
+          <p>Веб-разработчик на все руки. Сайты с нуля, правки чужого кода, формы заявок, лендинги, многостраничники — всё, что связано с фронтом и простым бэком.</p>
+          <p>Не люблю шаблонные решения. Каждый проект — свой характер, свой вайб, свои фишки.</p>
+        </div>
+        <div class="about-card" data-reveal data-tilt>
+          <span class="about-icon">⚡</span>
+          <h4>Быстро</h4>
+          <p>Сроки без воды. Сделал — показал — поправил.</p>
+        </div>
+        <div class="about-card" data-reveal data-tilt>
+          <span class="about-icon">🎯</span>
+          <h4>Точно</h4>
+          <p>Понимаю задачу с первого сообщения. Без лишних созвонов.</p>
+        </div>
+        <div class="about-card" data-reveal data-tilt>
+          <span class="about-icon">🔧</span>
+          <h4>Любые правки</h4>
+          <p>Чужой код, старый сайт, сломанная вёрстка — разберусь.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">02</span>
+        <h2>Пример работы</h2>
+      </div>
+      <article class="work-showcase" data-reveal>
+        <div class="work-preview" data-tilt>
+          <div class="work-browser">
+            <div class="browser-bar">
+              <span></span><span></span><span></span>
+              <div class="browser-url">rodion2643.github.io/kwt-service1</div>
+            </div>
+            <iframe
+              src="https://rodion2643.github.io/kwt-service1/#request"
+              title="KWT Service — пример работы"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+            ></iframe>
+            <div class="work-overlay">
+              <a href="https://rodion2643.github.io/kwt-service1/#request" class="btn btn-primary" target="_blank" rel="noopener" data-magnetic>
+                Открыть сайт ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="work-info">
+          <span class="work-tag">Лендинг + форма заявок</span>
+          <h3>KWT Service</h3>
+          <p>Сервисный лендинг с формой заявок, адаптивом и чистой структурой. Такие же формы и логику могу сделать под твой бизнес.</p>
+          <ul class="work-stack">
+            <li>HTML / CSS / JS</li>
+            <li>Форма заявок</li>
+            <li>Адаптив</li>
+            <li>GitHub Pages</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">03</span>
+        <h2>Что делаю</h2>
+      </div>
+      <div class="services-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>лендинги</span><span>•</span><span>правки сайтов</span><span>•</span><span>формы заявок</span><span>•</span><span>адаптив</span><span>•</span><span>анимации</span><span>•</span><span>деплой</span><span>•</span>
+          <span>лендинги</span><span>•</span><span>правки сайтов</span><span>•</span><span>формы заявок</span><span>•</span><span>адаптив</span><span>•</span><span>анимации</span><span>•</span><span>деплой</span><span>•</span>
+        </div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-reveal data-tilt>
+          <span class="service-num">01</span>
+          <h3>Сайты с нуля</h3>
+          <p>Лендинги, визитки, многостраничники — под ключ.</p>
+        </div>
+        <div class="service-card" data-reveal data-tilt>
+          <span class="service-num">02</span>
+          <h3>Правки и доработки</h3>
+          <p>Любые изменения на существующем сайте. Быстро и аккуратно.</p>
+        </div>
+        <div class="service-card" data-reveal data-tilt>
+          <span class="service-num">03</span>
+          <h3>Формы и заявки</h3>
+          <p>Как на примере KWT — красивые формы, которые реально работают.</p>
+        </div>
+        <div class="service-card" data-reveal data-tilt>
+          <span class="service-num">04</span>
+          <h3>UI / UX</h3>
+          <p>Современный молодёжный стиль, анимации, неон, минимализм.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">04</span>
+        <h2>Цены</h2>
+      </div>
+      <p class="pricing-lead" data-reveal>Честные цифры без сюрпризов. Точная сумма — после того как обсудим задачу.</p>
+
+      <div class="pricing-highlights" data-reveal>
+        <div class="pricing-highlight" data-tilt>
+          <span class="pricing-highlight-label">Создание сайта</span>
+          <span class="pricing-highlight-price">от <em>2 999</em> ₽</span>
+          <span class="pricing-highlight-desc">Лендинг, визитка или многостраничник с нуля</span>
+        </div>
+        <div class="pricing-highlight" data-tilt>
+          <span class="pricing-highlight-label">Переделка сайта</span>
+          <span class="pricing-highlight-price">от <em>999</em> ₽</span>
+          <span class="pricing-highlight-desc">Редизайн, новая структура, полный рефактор</span>
+        </div>
+        <div class="pricing-highlight" data-tilt>
+          <span class="pricing-highlight-label">Мелкие штучки</span>
+          <span class="pricing-highlight-price">от <em>499</em> ₽</span>
+          <span class="pricing-highlight-desc">Пара правок: текст, кнопка, блок, цвет</span>
+        </div>
+      </div>
+
+      <div class="pricing-groups">
+        <div class="pricing-group" data-reveal>
+          <h3 class="pricing-group-title">
+            <span class="pricing-group-icon">🔧</span>
+            Правки и доработки
+          </h3>
+          <ul class="pricing-list">
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Мелкие правки</span>
+                <span class="pricing-item-detail">Текст, цвет, кнопка, иконка — пара изменений</span>
+              </div>
+              <span class="pricing-item-price">499 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Деплой на хостинг</span>
+                <span class="pricing-item-detail">GitHub Pages, Netlify или твой хостинг</span>
+              </div>
+              <span class="pricing-item-price">500 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Добавление блока / секции</span>
+                <span class="pricing-item-detail">Новый раздел, карточка, галерея, FAQ</span>
+              </div>
+              <span class="pricing-item-price">799 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Форма заявок</span>
+                <span class="pricing-item-detail">Как на KWT — красивая форма с отправкой</span>
+              </div>
+              <span class="pricing-item-price">999 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Переделка сайта</span>
+                <span class="pricing-item-detail">Новый вид, структура, полный редизайн</span>
+              </div>
+              <span class="pricing-item-price">от 999 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Адаптив под мобилку</span>
+                <span class="pricing-item-detail">Нормальный вид на телефоне и планшете</span>
+              </div>
+              <span class="pricing-item-price">999 ₽</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricing-group" data-reveal>
+          <h3 class="pricing-group-title">
+            <span class="pricing-group-icon">🚀</span>
+            Создание сайтов
+          </h3>
+          <ul class="pricing-list">
+            <li class="pricing-item pricing-item--featured" data-tilt>
+              <span class="pricing-badge">популярное</span>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Визиточный сайт</span>
+                <span class="pricing-item-detail">1–3 страницы: о себе, услуги, контакты</span>
+              </div>
+              <span class="pricing-item-price">1 500 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Анимации и фишки</span>
+                <span class="pricing-item-detail">Неон, параллакс, hover-эффекты, кастомный UI</span>
+              </div>
+              <span class="pricing-item-price">1 200 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Лендинг</span>
+                <span class="pricing-item-detail">Одностраничник под продукт или услугу</span>
+              </div>
+              <span class="pricing-item-price">1 999 ₽</span>
+            </li>
+            <li class="pricing-item" data-tilt>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Многостраничный сайт</span>
+                <span class="pricing-item-detail">5+ страниц, меню, формы, адаптив</span>
+              </div>
+              <span class="pricing-item-price">2 499 ₽</span>
+            </li>
+            <li class="pricing-item pricing-item--featured" data-tilt>
+              <span class="pricing-badge">под ключ</span>
+              <div class="pricing-item-info">
+                <span class="pricing-item-name">Сайт под ключ</span>
+                <span class="pricing-item-detail">Дизайн, вёрстка, формы, адаптив, деплой — всё включено</span>
+              </div>
+              <span class="pricing-item-price">2 999 ₽</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pricing-cta" data-reveal>
+        <p>Не нашёл нужное? Напиши — посчитаю индивидуально.</p>
+        <button class="btn btn-primary" id="pricing-request" data-magnetic>Обсудить проект</button>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact">
+      <div class="section-head" data-reveal>
+        <span class="section-tag">05</span>
+        <h2>На связи</h2>
+      </div>
+      <div class="contact-block" data-reveal>
+        <p class="contact-lead">Пиши в Telegram — обсудим задачу и сроки за пару сообщений.</p>
+        <a href="https://t.me/oxe000" class="contact-tg" target="_blank" rel="noopener" data-magnetic>
+          <span class="tg-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          </span>
+          @oxe000
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 oxe000</span>
+    <span class="footer-made">handcrafted code</span>
+  </footer>
+
+  <!-- FAB заявка -->
+  <button class="fab-request" id="fab-request" aria-label="Оставить заявку" data-magnetic>
+    <span class="fab-ring"></span>
+    <span class="fab-ring fab-ring--2"></span>
+    <span class="fab-text">Заявка</span>
+    <svg class="fab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+
+  <!-- Модалка заявки -->
+  <div class="modal" id="request-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-labelledby="modal-title">
+      <button class="modal-close" data-close aria-label="Закрыть">&times;</button>
+      <div class="modal-glow"></div>
+      <h2 id="modal-title">Оставить заявку</h2>
+      <p class="modal-sub">Опиши задачу — отвечу в Telegram</p>
+      <form id="request-form" class="request-form">
+        <label>
+          <span>Имя</span>
+          <input type="text" name="name" required placeholder="Как к тебе обращаться?" autocomplete="name">
+        </label>
+        <label>
+          <span>Telegram</span>
+          <input type="text" name="telegram" required placeholder="@username" autocomplete="username">
+        </label>
+        <label>
+          <span>Что нужно сделать</span>
+          <textarea name="task" required rows="4" placeholder="Сайт с нуля, правки, форма заявок..."></textarea>
+        </label>
+        <label>
+          <span>Бюджет (необязательно)</span>
+          <input type="text" name="budget" placeholder="Примерный бюджет">
+        </label>
+        <button type="submit" class="btn btn-primary btn-full" data-magnetic>
+          <span class="btn-text">Отправить заявку</span>
+          <span class="btn-loader"></span>
+        </button>
+      </form>
+      <div class="form-success" id="form-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3>Заявка принята!</h3>
+        <p>Или напиши напрямую: <a href="https://t.me/oxe000" target="_blank" rel="noopener">@oxe000</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
